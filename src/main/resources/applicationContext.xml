@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:musicPlayerPrePost.properties"/>
+
+    <context:component-scan base-package="practice.PrePostMethods"/>
+
+<!--    &lt;!&ndash;    firstBean&ndash;&gt;-->
+<!--    <bean id="testBean" class="practice.firstBean.TestBean">-->
+<!--        <constructor-arg value="Lena"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;IOC&ndash;&gt;-->
+<!--    <bean id="musicBeanIoC" class="practice.IoC.RockMusic">-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;DI &ndash;&gt;-->
+<!--    <bean id="musicBeanClassicalDI" class="practice.DI.ClassicalMusic">-->
+<!--    </bean>-->
+<!--    <bean id="musicBeanRockDI" class="practice.DI.RockMusic">-->
+<!--    </bean>-->
+<!--    <bean id="musicPlayerDI" class="practice.DI.MusicPlayer">-->
+<!--        &lt;!&ndash;        через конструктор&ndash;&gt;-->
+<!--        &lt;!&ndash;        <constructor-arg ref= "musicBeanDI"/>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;        через setter&ndash;&gt;-->
+<!--        &lt;!&ndash;        берет имя из названия сеттера&ndash;&gt;-->
+<!--        &lt;!&ndash;        <property name="music" ref="musicBeanDI"/>&ndash;&gt;-->
+
+<!--        <property name="musicList">-->
+<!--            <list>-->
+<!--                <ref bean="musicBeanClassicalDI"/>-->
+<!--                <ref bean="musicBeanRockDI"/>-->
+<!--            </list>-->
+<!--        </property>-->
+
+<!--        &lt;!&ndash;                 // ref="musicBeanClassicalDI"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <property name="music" ref="musicBeanDI"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;        значения вручную&ndash;&gt;-->
+<!--        &lt;!&ndash;        <property name="name" value="SomeNAME"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <property name="volume" value="15"/>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;       значения через проперти файл&ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
+
+
+<!--&lt;!&ndash;    практика scope&ndash;&gt;-->
+<!--    <bean id="musicBeanClassicalScope" class="practice.scope.ClassicalMusic"-->
+<!--          init-method="doMyInit"-->
+<!--          destroy-method="doMyDestroy"-->
+<!--          factory-method="getClassicalMusic">-->
+<!--    </bean>-->
+<!--    <bean id="musicBeanRockScope" class="practice.scope.RockMusic">-->
+<!--    </bean>-->
+<!--    <bean id="musicPlayerScope" class="practice.scope.MusicPlayer"-->
+<!--          scope="prototype"-->
+<!--    >-->
+
+<!--        <property name="musicList">-->
+<!--            <list>-->
+<!--                <ref bean="musicBeanClassicalScope"/>-->
+<!--                <ref bean="musicBeanRockScope"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
+
+
+
+</beans>
